@@ -22,6 +22,7 @@ from bot import Bot
 from script import script
 from database.mdb import searchquery
 from plugins.channel import deleteallfilters
+from config import AUTH_USERS
 
 BUTTONS = {}
  
@@ -84,7 +85,10 @@ async def filter(client: Bot, message: Message):
 
 @Client.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
-    if query.message.reply_to_message.from_user.id == query.from_user.id:
+    clicked = query.from_user.id
+    typed = query.message.reply_to_message.from_user.id
+
+    if (clicked == typed) or (clicked in AUTH_USERS):
 
         if query.data.startswith("next"):
             await query.answer()
@@ -195,7 +199,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="help_data"),
                     InlineKeyboardButton("START", callback_data="start_data")],
-                [InlineKeyboardButton("SOURCE CODE", url="https://t.me/kurachkanjiedukkatte")]
+                [InlineKeyboardButton("SOURCE CODE", url="https://github.com/TroJanzHEX/Auto-Filter-Bot-V2")]
             ])
 
             await query.message.edit_text(
