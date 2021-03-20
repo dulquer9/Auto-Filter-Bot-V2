@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @NickxFury
+# @trojanzhex
 
 
 import re
@@ -169,7 +169,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("HELP", callback_data="help_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data")],
-                [InlineKeyboardButton("⭕️ JOIN OUR CHANNELS ⭕️", url="https://t.me/MOVIECLUB_Links")]
+                [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")]
             ])
 
             await query.message.edit_text(
@@ -184,7 +184,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="start_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data")],
-                [InlineKeyboardButton("⭕️ JOIN OUR GROUP ⭕️", url="https://t.me/MOVIECLUB_chat")]
+                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
             ])
 
             await query.message.edit_text(
@@ -223,4 +223,4 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
 def split_list(l, n):
     for i in range(0, len(l), n):
-        yield l[i:i + n]  
+        yield l[i:i + n]
