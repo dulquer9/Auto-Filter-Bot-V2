@@ -2,7 +2,6 @@ class script(object):
 
 
     START_MSG = """ <b>Hi {}
-
 Sorry.. This Bot Can Only Be Used in <i>Movie Club Group!...</i></b>"""
 
 
