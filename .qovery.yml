@@ -1,0 +1,11 @@
+---
+application:
+  name: "auto-filter-bot-v2"
+  project: "Adv Bot"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-auto-filter-bot-v2"
+  routes:
+  - application_name: "auto-filter-bot-v2"
+    paths:
+    - "/*"
